@@ -25,6 +25,10 @@ contract WavePortal {
     }
 
     function getTotalWavers() public  view returns (address[] memory) {
+        console.log("All wavers:");
+        for(uint i = 0; i < wavers.length; i++) {
+            console.log(wavers[i]);
+        }
         return wavers;
     }
 }
