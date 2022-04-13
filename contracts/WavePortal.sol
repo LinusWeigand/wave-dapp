@@ -23,6 +23,8 @@ contract WavePortal {
         console.log("I'm a smart contract. POGCHAMP");
 
         seed = (block.timestamp + block.difficulty) % 100;
+
+        console.log("Random # generated: ", seed);
     }
 
     function wave(string memory _message) public {
@@ -35,6 +37,7 @@ contract WavePortal {
         emit NewWave(msg.sender, block.timestamp, _message);
 
         if (seed <= 50) {
+            console.log("%s won!", msg.sender);
             uint256 prizeAmount = 0.001 ether;
             require(
                 prizeAmount <= address(this).balance,
