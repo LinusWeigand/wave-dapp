@@ -3,9 +3,6 @@ const main = async () => {
 
     const waveContract = await deploy(owner);
 
-    /* 
-     * Get contract balance
-     */
     await printBalance(waveContract);
     await printTotalWaves(waveContract);
 
