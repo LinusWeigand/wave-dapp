@@ -36,6 +36,10 @@ contract WavePortal {
 
         emit NewWave(msg.sender, block.timestamp, _message);
 
+        seed = (block.difficulty + block.timestamp + seed) % 100;
+
+        console.log("Random # generated: %d", seed);
+
         if (seed <= 50) {
             console.log("%s won!", msg.sender);
             uint256 prizeAmount = 0.001 ether;
